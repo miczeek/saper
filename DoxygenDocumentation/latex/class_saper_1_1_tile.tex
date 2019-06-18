@@ -1,0 +1,108 @@
+\hypertarget{class_saper_1_1_tile}{}\section{Saper.\+Tile Class Reference}
+\label{class_saper_1_1_tile}\index{Saper.Tile@{Saper.Tile}}
+
+
+Klasa \mbox{\hyperlink{class_saper_1_1_tile}{Tile}} dla pola/kafelka, dziedziczone z klasy Picture\+Box.  
+
+
+Inheritance diagram for Saper.\+Tile\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_saper_1_1_tile}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}\label{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}} 
+enum \mbox{\hyperlink{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}{States}} \{ {\bfseries Empty}, 
+{\bfseries Bomb}
+ \}
+\begin{DoxyCompactList}\small\item\em Ilość bomb w pobliżu tego pola, domyślnie -\/1, będzie zaktualizowane później. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_saper_1_1_tile_a5225a6086870b9c2c9cad42ae248be68}{Tile}} (int \+\_\+x, int \+\_\+y, int \+\_\+state, \mbox{\hyperlink{class_saper_1_1_game}{Game}} \+\_\+gra)
+\begin{DoxyCompactList}\small\item\em Klasa główna \mbox{\hyperlink{class_saper_1_1_game}{Game}} do której będziemy mogli się odwoływać \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_saper_1_1_tile_a5d81eaa0b173ccb79598393706087e6d}{Img}} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}\label{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}} 
+int {\bfseries tile\+Size} = 32
+\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}\label{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}} 
+int \mbox{\hyperlink{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}{x}}
+\begin{DoxyCompactList}\small\item\em Wielkość grafiki 32x32. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}\label{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}} 
+int \mbox{\hyperlink{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}{y}}
+\begin{DoxyCompactList}\small\item\em Pozycja od lewej, X\+XX. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}\label{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}} 
+int \mbox{\hyperlink{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}{around}} = -\/1
+\begin{DoxyCompactList}\small\item\em Pozycja od góry, X\+XX. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}\label{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}} 
+int \mbox{\hyperlink{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}{state}}
+\begin{DoxyCompactList}\small\item\em Statusy dla pola\+: Puste lub z Bombą \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}\label{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}} 
+bool \mbox{\hyperlink{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}{clicked}} = false
+\begin{DoxyCompactList}\small\item\em Status pola odpowiadający enum States. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}\label{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}} 
+bool \mbox{\hyperlink{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}{flag}} = false
+\begin{DoxyCompactList}\small\item\em Czy pole zostało kliknięte. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Klasa \mbox{\hyperlink{class_saper_1_1_tile}{Tile}} dla pola/kafelka, dziedziczone z klasy Picture\+Box. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_saper_1_1_tile_a5225a6086870b9c2c9cad42ae248be68}\label{class_saper_1_1_tile_a5225a6086870b9c2c9cad42ae248be68}} 
+\index{Saper.Tile@{Saper.Tile}!Tile@{Tile}}
+\index{Tile@{Tile}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{Tile()}{Tile()}}
+{\footnotesize\ttfamily Saper.\+Tile.\+Tile (\begin{DoxyParamCaption}\item[{int}]{\+\_\+x,  }\item[{int}]{\+\_\+y,  }\item[{int}]{\+\_\+state,  }\item[{\mbox{\hyperlink{class_saper_1_1_game}{Game}}}]{\+\_\+gra }\end{DoxyParamCaption})}
+
+
+
+Klasa główna \mbox{\hyperlink{class_saper_1_1_game}{Game}} do której będziemy mogli się odwoływać 
+
+Konstruktor klasy (wywoływany przy jej tworzeniu) przyjmujący argumenty\+: lewo, góra, stan (bomba/puste), oraz klasę \mbox{\hyperlink{class_saper_1_1_game}{Game}} Przypisanie wartości zmiennym wartośćiami z argumentów funkcji
+
+Nadanie identyfikatora dla pola
+
+Utworzenie kwadratowego obrazka o podanej wcześniej wielkości w zmiennej tile\+Size
+
+Zmiana wyglądu kursora po najchaniu na pole
+
+Ustawienie grafiki dla pola 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_saper_1_1_tile_a5d81eaa0b173ccb79598393706087e6d}\label{class_saper_1_1_tile_a5d81eaa0b173ccb79598393706087e6d}} 
+\index{Saper.Tile@{Saper.Tile}!Img@{Img}}
+\index{Img@{Img}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{Img()}{Img()}}
+{\footnotesize\ttfamily void Saper.\+Tile.\+Img (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Standardowa grafika pustego kafelka
+
+Wyświetlanie flagi gdy\+: Gra trwa, nie kliknięto, oznaczono flagą
+
+Dla pustego pola
+
+Gdy został kliknięty -\/ wyświetlenie ilości bomb w pobliżu
+
+Gdy oznaczono go flagą
+
+Dla pola z bombą
+
+Gdy kliknięto bombę -\/ wybuch
+
+Gdy bombę oznaczono flagą
+
+Po zakończeniu gry pokaż bomby
+
+W przypadku błędu wyświetl grafikę z pytajnikiem 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Projects/saper/\+Saper/\+Saper/Program.\+cs\end{DoxyCompactItemize}
