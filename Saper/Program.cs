@@ -212,7 +212,7 @@ namespace Saper {
                 NewGame(15, 15, 9);
             }
             if (result == DialogResult.Yes) {
-                NewGame(30, 20, 8);
+                NewGame(20, 20, 8);
             }
         }
 
