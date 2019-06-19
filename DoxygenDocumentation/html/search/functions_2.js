@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['game',['Game',['../class_saper_1_1_game.html#a9d694a044fb311e088ce585b716a9d84',1,'Saper::Game']]],
-  ['getfield',['getField',['../class_saper_1_1_game.html#a6ad3e962eca53c2dbf6b499a469fa5f2',1,'Saper::Game']]]
+  ['dialogbox',['DialogBox',['../class_saper_1_1_game.html#a807f8f51c7b6f8b63382b7eb098b5fab',1,'Saper::Game']]],
+  ['dispose',['Dispose',['../class_saper_1_1_game.html#af10b28306097f647aea5dbc84196fcd1',1,'Saper::Game']]],
+  ['drawlayout',['DrawLayout',['../class_saper_1_1_game.html#ae9bce8a78f549e7e728c6b1f290c9d7e',1,'Saper::Game']]]
 ];

@@ -5,6 +5,12 @@ using System.Resources;
 
 namespace Saper {
 
+    // Write code for button1 and button2 's click event in order to call 
+    // from any where in your current project.
+
+    // Calling
+
+
     //! Klasa Tile dla pola/kafelka, dziedziczone z klasy PictureBox
     public class Tile : PictureBox {
         public int tileSize = 32; //! Wielkość grafiki 32x32
@@ -114,7 +120,7 @@ namespace Saper {
             for (int i = 0; i < game_width; i++) {
                 for (int j = 0; j < game_height; j++) {
                     int state;
-                    if (bombs[i * game_width + j] == 0) { //! Przypisanie wartości z pola
+                    if (bombs[GetIndex(i, j)] == 0) { //! Przypisanie wartości z pola
                         state = (int)Tile.States.Empty; 
                         tiles_left++; //! Zwiększenie stanu licznika
                     } else {
@@ -125,8 +131,116 @@ namespace Saper {
             }
         }
 
-        //! Funkcja tworząca nową grę (standardowo o rozmiarze 10x10)
-        public void NewGame(int width = 10, int height = 10, int[] bombs = null) {
+        public static DialogResult DialogBox(string title, string promptText, ref string value, string button1 = "OK", string button2 = "Cancel", string button3 = null) {
+            //! Funkcja z: https://stackoverflow.com/questions/4264664/how-to-change-the-button-text-for-yes-and-no-buttons-in-the-messagebox-show
+            //! Tworzy okienko z zapytaniem i 3 przyciskami
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button button_1 = new Button();
+            Button button_2 = new Button();
+            Button button_3 = new Button();
+
+            int buttonStartPos = 228; //Standard two button position
+
+
+            if (button3 != null)
+                buttonStartPos = 228 - 81;
+            else {
+                button_3.Visible = false;
+                button_3.Enabled = false;
+            }
+
+
+            form.Text = title;
+
+            // Label
+            label.Text = promptText;
+            label.SetBounds(9, 20, 372, 13);
+            label.Font = new Font("Microsoft Tai Le", 10, FontStyle.Regular);
+
+            // TextBox
+            if (value == null) {
+            } else {
+                textBox.Text = value;
+                textBox.SetBounds(12, 36, 372, 20);
+                textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            }
+
+            button_1.Text = button1;
+            button_2.Text = button2;
+            button_3.Text = button3 ?? string.Empty;
+            button_1.DialogResult = DialogResult.OK;
+            button_2.DialogResult = DialogResult.Cancel;
+            button_3.DialogResult = DialogResult.Yes;
+
+
+            button_1.SetBounds(buttonStartPos, 72, 75, 23);
+            button_2.SetBounds(buttonStartPos + 81, 72, 75, 23);
+            button_3.SetBounds(buttonStartPos + (2 * 81), 72, 75, 23);
+
+            label.AutoSize = true;
+            button_1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_3.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, button_1, button_2 });
+            if (button3 != null)
+                form.Controls.Add(button_3);
+            if (value != null)
+                form.Controls.Add(textBox);
+
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = button_1;
+            form.CancelButton = button_2;
+
+            DialogResult dialogResult = form.ShowDialog();
+            value = textBox.Text;
+            return dialogResult;
+        }
+
+        public void NewGameType () { //! Funkcja do wyboru poziomu trudnośći dla nowej gry
+            string message = "Wybierz poziom trudności, od niego będzie zależeć wielkośc gry oraz częstotliwość pojawiania się bomb";
+            string caption = "Poziom trudności";
+
+            string _result = null;
+            DialogResult result = DialogBox(caption, message, ref _result, "Łatwy", "Średni", "Trudny");
+
+            if (result == DialogResult.OK) {
+                NewGame(8, 8, 10);
+            }
+            if (result == DialogResult.Cancel) {
+                NewGame(15, 15, 9);
+            }
+            if (result == DialogResult.Yes) {
+                NewGame(30, 20, 8);
+            }
+        }
+
+       
+        public void DrawLayout () {  //! Funkcja odpowiadająca za zmianę rozmiaru okna i ustawienie przycisków
+
+            // 13px marginesów po obu stronach + ilość kolumn * 32 (rozmiar) + 6 (marginesy po prawej i lewej)
+            int width = 13 * 2 + game_width * (32 + 6);
+            // 13px marginesów góra/dół + ilość wierszy * 32 (rozmiar) + 6 (marginesy po prawej i lewej) 
+            // + margines górny na przycisk nowej gry
+            int height = 13 * 2 + game_height * (32 + 6) + 30;
+
+            this.ClientSize = new System.Drawing.Size(width, height);
+
+            // Ustawienie lokalizacji przycisku nowej gry
+            this.button_newgame.Location = new System.Drawing.Point(width / 2 - 75 / 2, 12);
+
+            // Ustawienie lokalizacji tekstu o stanie gry
+            this.stan.Location = new System.Drawing.Point(width / 3 * 2 - 35 / 2, 17);
+        }
+
+        public void NewGame(int width = 14, int height = 14, int chance_bomb = 10, int[] bombs = null) { //! Funkcja tworząca nową grę (standardowo o rozmiarze 10x10)
             stan.Text = "Powodzenia!"; //! Zmiana tekstu na powodzenia
             game_over = false; //! Gra nie jest zakończona
             game_width = width; //! Przypisanie szerokości gry z argumentu (ilości pól w poziomie)
@@ -135,6 +249,9 @@ namespace Saper {
             fields = new int[game_size]; //! Utworzenie tablicy na statusy pól
             tiles_left = 0; //! Licznik pozostałych pól 
             game_win = false;
+            bomb_chance = chance_bomb;  //! Szansa na wystąpienie bomby (1/10)
+
+            DrawLayout();
 
             //! Wylosowanie bomb
             if (bombs == null) {
@@ -163,7 +280,7 @@ namespace Saper {
                     tile.Click += new System.EventHandler(this.TileOnClick); //! Przypisanie funkcji do kliknięcia na pole
                     mines.Controls.Add(tile); //! Dodanie pola do tabeli
                     tile.around = TilesAround(tile.x, tile.y); //! Przeliczenie ile pól wokół ma bomby
-                    tiles[i * game_width + j] = tile; //! Przypisanie pola na odpowiednie miejsce w tablicy z polami
+                    tiles[GetIndex(i, j)] = tile; //! Przypisanie pola na odpowiednie miejsce w tablicy z polami
                 }
             }
 
@@ -174,15 +291,19 @@ namespace Saper {
         public int getField(int i, int j) { //! Pobranie zawartości pola
             //! Jeżeli podano niestniejące pole (wychodzące poza ramy gry) zwróć 0
             if (i < 0 || i >= game_width || j < 0 || j >= game_height) return 0;
-            return fields[i * game_width + j]; //! Zwróć wartość pola
+            return fields[GetIndex(i, j)]; //! Zwróć wartość pola
         }
 
         public void setField(int i, int j, int state) { //! Ustawienie statusu pola
-            fields[i * game_width + j] = state;
+            fields[GetIndex(i, j)] = state;
         }
 
-        public Tile GetTile (int i, int j) {
-            return tiles[i * game_width + j];
+        public Tile GetTile (int i, int j) { //! Funckja zwracająca dane pole
+            return tiles[GetIndex(i,j)];
+        }
+
+        public int GetIndex(int i, int j) { //! Funkcja zwracająca index w tablicy
+            return i * game_height + j;
         }
 
 
@@ -227,7 +348,7 @@ namespace Saper {
         public void ClickField(int i, int j) { //! Funkcja naciskająca dane pole
             //! Jeżeli podano niestniejące pole (wychodzące poza ramy gry) przerwij wykonywanie funkcji
             if (i < 0 || i >= game_width || j < 0 || j >= game_height) return;
-            Tile tile = tiles[i * game_width + j]; //! Pobierz dane pole do zmiennej
+            Tile tile = tiles[GetIndex(i, j)]; //! Pobierz dane pole do zmiennej
             if (tile.state == (int)Tile.States.Empty) { //! Jeżeli pole jest puste
                 if (tile.around == 0) { //! Jeżeli naciśnięto pole które nie ma bomb wokół,
                     TileClick(tile, false); //! Wtedy naciśnij to pole
@@ -280,7 +401,7 @@ namespace Saper {
         }
 
         void ButtonNewGame(object sender, EventArgs e) { //!Funkcja wywoływana po naciśnięciu przycisku nowej gry
-            NewGame(); //! Wywołanie funkcji utworzenia nowej gry
+            NewGameType(); //! Wywołanie funkcji utworzenia nowej gry
         }
 
         //!Konstruktor klasy Game, wywoływany przy tworzeniu

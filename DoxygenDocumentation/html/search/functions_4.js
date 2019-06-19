@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['newgame',['NewGame',['../class_saper_1_1_game.html#ada46d1d0719becfbff58cd5ab3d502c6',1,'Saper::Game']]]
+  ['img',['Img',['../class_saper_1_1_tile.html#a5d81eaa0b173ccb79598393706087e6d',1,'Saper::Tile']]]
 ];

@@ -14,9 +14,8 @@ Inheritance diagram for Saper.\+Tile\+:\begin{figure}[H]
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}\label{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}} 
-enum \mbox{\hyperlink{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}{States}} \{ {\bfseries Empty}, 
-{\bfseries Bomb}
+enum \mbox{\hyperlink{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}{States}} \{ \mbox{\hyperlink{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845cace2c8aed9c2fa0cfbed56cbda4d8bf07}{States.\+Empty}}, 
+\mbox{\hyperlink{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845cacd3abfc2f377a4c3fd9181f919d9de82}{States.\+Bomb}}
  \}
 \begin{DoxyCompactList}\small\item\em Ilość bomb w pobliżu tego pola, domyślnie -\/1, będzie zaktualizowane później. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
@@ -29,31 +28,47 @@ void \mbox{\hyperlink{class_saper_1_1_tile_a5d81eaa0b173ccb79598393706087e6d}{Im
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}\label{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}} 
-int {\bfseries tile\+Size} = 32
+int \mbox{\hyperlink{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}{tile\+Size}} = 32
 \item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}\label{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}} 
 int \mbox{\hyperlink{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}{x}}
 \begin{DoxyCompactList}\small\item\em Wielkość grafiki 32x32. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}\label{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}} 
 int \mbox{\hyperlink{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}{y}}
 \begin{DoxyCompactList}\small\item\em Pozycja od lewej, X\+XX. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}\label{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}} 
 int \mbox{\hyperlink{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}{around}} = -\/1
 \begin{DoxyCompactList}\small\item\em Pozycja od góry, X\+XX. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}\label{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}} 
 int \mbox{\hyperlink{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}{state}}
 \begin{DoxyCompactList}\small\item\em Statusy dla pola\+: Puste lub z Bombą \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}\label{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}} 
 bool \mbox{\hyperlink{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}{clicked}} = false
 \begin{DoxyCompactList}\small\item\em Status pola odpowiadający enum States. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}\label{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}} 
 bool \mbox{\hyperlink{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}{flag}} = false
 \begin{DoxyCompactList}\small\item\em Czy pole zostało kliknięte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Klasa \mbox{\hyperlink{class_saper_1_1_tile}{Tile}} dla pola/kafelka, dziedziczone z klasy Picture\+Box. 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}\label{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}} 
+\index{Saper.Tile@{Saper.Tile}!States@{States}}
+\index{States@{States}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{States}{States}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845c}{Saper.\+Tile.\+States}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Ilość bomb w pobliżu tego pola, domyślnie -\/1, będzie zaktualizowane później. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Empty@{Empty}!Saper.Tile@{Saper.Tile}}\index{Saper.Tile@{Saper.Tile}!Empty@{Empty}}}\mbox{\Hypertarget{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845cace2c8aed9c2fa0cfbed56cbda4d8bf07}\label{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845cace2c8aed9c2fa0cfbed56cbda4d8bf07}} 
+Empty&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bomb@{Bomb}!Saper.Tile@{Saper.Tile}}\index{Saper.Tile@{Saper.Tile}!Bomb@{Bomb}}}\mbox{\Hypertarget{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845cacd3abfc2f377a4c3fd9181f919d9de82}\label{class_saper_1_1_tile_a4318bc08fbfd24d56ffa8ea1359d845cacd3abfc2f377a4c3fd9181f919d9de82}} 
+Bomb&\\
+\hline
+
+\end{DoxyEnumFields}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_saper_1_1_tile_a5225a6086870b9c2c9cad42ae248be68}\label{class_saper_1_1_tile_a5225a6086870b9c2c9cad42ae248be68}} 
@@ -103,6 +118,75 @@ Po zakończeniu gry pokaż bomby
 
 W przypadku błędu wyświetl grafikę z pytajnikiem 
 
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}\label{class_saper_1_1_tile_a049847b44328392d75c1e04276417191}} 
+\index{Saper.Tile@{Saper.Tile}!around@{around}}
+\index{around@{around}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{around}{around}}
+{\footnotesize\ttfamily int Saper.\+Tile.\+around = -\/1}
+
+
+
+Pozycja od góry, X\+XX. 
+
+\mbox{\Hypertarget{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}\label{class_saper_1_1_tile_a0b3e70fcbb158d0d48856f4f1c21e74c}} 
+\index{Saper.Tile@{Saper.Tile}!clicked@{clicked}}
+\index{clicked@{clicked}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{clicked}{clicked}}
+{\footnotesize\ttfamily bool Saper.\+Tile.\+clicked = false}
+
+
+
+Status pola odpowiadający enum States. 
+
+\mbox{\Hypertarget{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}\label{class_saper_1_1_tile_a558d8534615ae6ddcbdbef636b0b7d16}} 
+\index{Saper.Tile@{Saper.Tile}!flag@{flag}}
+\index{flag@{flag}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{flag}{flag}}
+{\footnotesize\ttfamily bool Saper.\+Tile.\+flag = false}
+
+
+
+Czy pole zostało kliknięte. 
+
+\mbox{\Hypertarget{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}\label{class_saper_1_1_tile_a59c61b4cd8fc0665533989c017b23688}} 
+\index{Saper.Tile@{Saper.Tile}!state@{state}}
+\index{state@{state}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily int Saper.\+Tile.\+state}
+
+
+
+Statusy dla pola\+: Puste lub z Bombą 
+
+\mbox{\Hypertarget{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}\label{class_saper_1_1_tile_af14b4a73e2ea580fe25cf29eba901f83}} 
+\index{Saper.Tile@{Saper.Tile}!tileSize@{tileSize}}
+\index{tileSize@{tileSize}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{tileSize}{tileSize}}
+{\footnotesize\ttfamily int Saper.\+Tile.\+tile\+Size = 32}
+
+\mbox{\Hypertarget{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}\label{class_saper_1_1_tile_a8861f08f0232b9e06b35f9539f97614e}} 
+\index{Saper.Tile@{Saper.Tile}!x@{x}}
+\index{x@{x}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily int Saper.\+Tile.\+x}
+
+
+
+Wielkość grafiki 32x32. 
+
+\mbox{\Hypertarget{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}\label{class_saper_1_1_tile_a4bee1eb877052349f14938b9d28eea87}} 
+\index{Saper.Tile@{Saper.Tile}!y@{y}}
+\index{y@{y}!Saper.Tile@{Saper.Tile}}
+\subsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily int Saper.\+Tile.\+y}
+
+
+
+Pozycja od lewej, X\+XX. 
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Projects/saper/\+Saper/\+Saper/Program.\+cs\end{DoxyCompactItemize}
+D\+:/\+Projects/saper/\+Saper/\+Saper/\mbox{\hyperlink{_program_8cs}{Program.\+cs}}\end{DoxyCompactItemize}

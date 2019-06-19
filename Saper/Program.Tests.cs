@@ -31,7 +31,7 @@ namespace Saper.Tests
         [Test]
         public void GameCreate() {
             game = new Game();
-            game.NewGame(x, y, bombs);
+            game.NewGame(x, y, 10, bombs);
 
             // Sprawdzenie czy gra została utworzona
             Assert.AreEqual(game.created, true);
