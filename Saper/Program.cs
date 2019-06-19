@@ -5,17 +5,11 @@ using System.Resources;
 
 namespace Saper {
 
-    // Write code for button1 and button2 's click event in order to call 
-    // from any where in your current project.
-
-    // Calling
-
-
     //! Klasa Tile dla pola/kafelka, dziedziczone z klasy PictureBox
     public class Tile : PictureBox {
         public int tileSize = 32; //! Wielkość grafiki 32x32
-        public int x; //! Pozycja od lewej, XXX
-        public int y; //! Pozycja od góry, XXX
+        public int x; //! Pozycja od lewej, liczone od zera
+        public int y; //! Pozycja od góry, liczone od zera
         public int around = -1; //! Ilość bomb w pobliżu tego pola, domyślnie -1, będzie zaktualizowane później
 
         public enum States { Empty, Bomb } //! Statusy dla pola: Puste lub z Bombą

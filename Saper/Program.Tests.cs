@@ -18,7 +18,7 @@ namespace Saper.Tests
         int x = 5;
         int y = 5;
 
-        // Tablica z ustawionymi bombami
+        //! Tablica z ustawionymi bombami
         int[] bombs = {
             0,0,0,0,0,
             0,1,0,0,0,
@@ -27,20 +27,20 @@ namespace Saper.Tests
             0,0,1,0,1,
         };
 
-        // Przed każdym testem tworzymy nową grę
+        //! Przed każdym testem tworzymy nową grę
         [Test]
         public void GameCreate() {
             game = new Game();
             game.NewGame(x, y, 10, bombs);
 
-            // Sprawdzenie czy gra została utworzona
+            //! Sprawdzenie czy gra została utworzona
             Assert.AreEqual(game.created, true);
         }
 
         [Test]
         public void GameSize () {
             GameCreate();
-            // Sprawdzenie czy rozmiar gry się zgadza
+            //! Sprawdzenie czy rozmiar gry się zgadza
             Assert.AreEqual(game.game_size, x * y);
             Assert.AreEqual(game.game_width, x);
             Assert.AreEqual(game.game_height, y);
@@ -49,7 +49,7 @@ namespace Saper.Tests
         [Test]
         public void GameNotOver () {
             GameCreate();
-            // Sprawdzenie czy gra nie jest zakończona po utworzeniu
+            //! Sprawdzenie czy gra nie jest zakończona po utworzeniu
             Assert.AreEqual(game.game_over, false);
         }
 
@@ -62,11 +62,11 @@ namespace Saper.Tests
                 bombs_amount += field;
             }
 
-            // Sprawdzenie czy ilość bomb się zgadza
+            //! Sprawdzenie czy ilość bomb się zgadza
             int amount = 5;
             Assert.AreEqual(amount, bombs_amount);
 
-            // Sprawdzenie czy ilość pustych pól się zgadza
+            //! Sprawdzenie czy ilość pustych pól się zgadza
             Assert.AreEqual(game.tiles_left, x * y - bombs_amount);
         }
 
@@ -74,13 +74,13 @@ namespace Saper.Tests
         public void GameSetGetFields () {
             GameCreate();
 
-            // Ustawienie pola 2,2 na 1 (bombę)
+            //! Ustawienie pola 2,2 na 1 (bombę)
             game.setField(2, 2, 1);
-            // Sprawdzenie czy na polu 3,3 jest 1
+            //! Sprawdzenie czy na polu 3,3 jest 1
             Assert.AreEqual(game.getField(2, 2), 1);
             Assert.AreNotEqual(game.getField(2, 2), 0);
 
-            // Przywrócenie stanu pola
+            //! Przywrócenie stanu pola
             game.setField(2, 2, 0);
         }
 
@@ -89,8 +89,8 @@ namespace Saper.Tests
             GameCreate();
 
             int x = -1;
-            // Ręczne utworzena tablica z zaznaczonymi bombami wokół
-            // Pola z bombami ustawiamy na -1 i pomijamy przy sprawdzaniu
+            //! Ręczne utworzena tablica z zaznaczonymi bombami wokół
+            //! Pola z bombami ustawiamy na -1 i pomijamy przy sprawdzaniu
             int[] bombs_around = {
                 1,1,1,0,0,
                 1,x,1,1,1,
@@ -99,7 +99,7 @@ namespace Saper.Tests
                 0,1,x,3,x,
             };
 
-            // Pętle po wszystkich polach
+            //! Pętle po wszystkich polach
             for (int i = 0; i < x; i++) {
                 for (int j = 0; j < y; j++) {
                     Assert.AreEqual(game.TilesAround(i, j), bombs_around[i * x + j]);
@@ -110,7 +110,7 @@ namespace Saper.Tests
         [Test]
         public void GameLose () {
             GameCreate();
-            // Sprawdzenie czy gra zostanie przegrana po naciśnięciu pola z bombą
+            //! Sprawdzenie czy gra zostanie przegrana po naciśnięciu pola z bombą
             game.TileClick(game.GetTile(1, 1), true);
 
             Assert.AreEqual(game.game_over, true);
@@ -120,7 +120,7 @@ namespace Saper.Tests
         [Test]
         public void GameWin () {
             GameCreate();
-            // Sprawdzenie czy gra zostanie wygrana po naciśnięciu wszystkich pustych pól
+            //! Sprawdzenie czy gra zostanie wygrana po naciśnięciu wszystkich pustych pól
             for (int i = 0; i < x; i++) {
                 for (int j = 0; j < y; j++) {
                     if (bombs[i * x + j] == 0) {
