@@ -35,6 +35,7 @@ namespace Saper {
 
         //! Konstruktor klasy (wywoływany przy jej tworzeniu)
         //! @param _x, _y Pozycje od lewej, góry
+        //! @param _state Stan kafelka
         //! @param _gra Obiekt z grą klasy Game
         public Tile(int _x, int _y, int _state, Game _gra) {
             // Przypisanie wartości zmiennym wartośćiami z argumentów funkcji
