@@ -1,0 +1,187 @@
+\hypertarget{class_saper_1_1_game}{}\section{Saper.\+Game Class Reference}
+\label{class_saper_1_1_game}\index{Saper.Game@{Saper.Game}}
+
+
+Klasa \mbox{\hyperlink{class_saper_1_1_game}{Game}} odpowiadająca za działanie gry, dziedzicząca z klasy Form.  
+
+
+Inheritance diagram for Saper.\+Game\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_saper_1_1_game}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a68a874323b134ee545e72de1d332f11a}\label{class_saper_1_1_game_a68a874323b134ee545e72de1d332f11a}} 
+int \mbox{\hyperlink{class_saper_1_1_game_a68a874323b134ee545e72de1d332f11a}{Bombs\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja zwracająca ilość bomb. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a1f14c9d69d6267494ca48f146c9e34c7}\label{class_saper_1_1_game_a1f14c9d69d6267494ca48f146c9e34c7}} 
+void \mbox{\hyperlink{class_saper_1_1_game_a1f14c9d69d6267494ca48f146c9e34c7}{New\+Game\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja do wyboru poziomu trudnośći dla nowej gry. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_ae9bce8a78f549e7e728c6b1f290c9d7e}\label{class_saper_1_1_game_ae9bce8a78f549e7e728c6b1f290c9d7e}} 
+void \mbox{\hyperlink{class_saper_1_1_game_ae9bce8a78f549e7e728c6b1f290c9d7e}{Draw\+Layout}} ()
+\begin{DoxyCompactList}\small\item\em Funkcja odpowiadająca za zmianę rozmiaru okna i ustawienie przycisków. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_saper_1_1_game_a77b5cf2c44e21908cbbe17622ef1c2db}{New\+Game}} (int width=14, int height=14, int chance\+\_\+bomb=10, int\mbox{[}$\,$\mbox{]} bombs=null)
+\item 
+int \mbox{\hyperlink{class_saper_1_1_game_a6ad3e962eca53c2dbf6b499a469fa5f2}{get\+Field}} (int i, int j)
+\item 
+void \mbox{\hyperlink{class_saper_1_1_game_aa62b5814c25458101aaf843271dcff83}{set\+Field}} (int i, int j, int state)
+\item 
+\mbox{\hyperlink{class_saper_1_1_tile}{Tile}} \mbox{\hyperlink{class_saper_1_1_game_aad59b3c8d1d9ca582a9b508aad99631a}{Get\+Tile}} (int i, int j)
+\item 
+int \mbox{\hyperlink{class_saper_1_1_game_a036a73f7d4b60dada7ec45c9a712eff4}{Get\+Index}} (int i, int j)
+\item 
+void \mbox{\hyperlink{class_saper_1_1_game_ad7088e52259cb63a068213bf2856eebb}{Tile\+Click}} (\mbox{\hyperlink{class_saper_1_1_tile}{Tile}} tile, bool user\+\_\+click)
+\item 
+void \mbox{\hyperlink{class_saper_1_1_game_a87c8f7562e380781913a182aab6e093d}{Click\+Field}} (int i, int j)
+\item 
+int \mbox{\hyperlink{class_saper_1_1_game_a77640c9261a148c9e68f28b0b02b57c8}{Tiles\+Around}} (int x, int y)
+\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a9d694a044fb311e088ce585b716a9d84}\label{class_saper_1_1_game_a9d694a044fb311e088ce585b716a9d84}} 
+\mbox{\hyperlink{class_saper_1_1_game_a9d694a044fb311e088ce585b716a9d84}{Game}} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor klasy \mbox{\hyperlink{class_saper_1_1_game}{Game}}, wywoływany przy tworzeniu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a807f8f51c7b6f8b63382b7eb098b5fab}\label{class_saper_1_1_game_a807f8f51c7b6f8b63382b7eb098b5fab}} 
+static Dialog\+Result \mbox{\hyperlink{class_saper_1_1_game_a807f8f51c7b6f8b63382b7eb098b5fab}{Dialog\+Box}} (string title, string prompt\+Text, ref string value, string button1=\char`\"{}OK\char`\"{}, string button2=\char`\"{}Cancel\char`\"{}, string button3=null)
+\begin{DoxyCompactList}\small\item\em Funkcja otwierająca okno zapytania z 3 mozliwościami. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_saper_1_1_game_ac555ca6b549cd5db36344c44d30f628d}\label{class_saper_1_1_game_ac555ca6b549cd5db36344c44d30f628d}} 
+int \mbox{\hyperlink{class_saper_1_1_game_ac555ca6b549cd5db36344c44d30f628d}{game\+\_\+width}}
+\begin{DoxyCompactList}\small\item\em Ilość kolumn z polami. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a4384a168c23e724b445de95a6af206ff}\label{class_saper_1_1_game_a4384a168c23e724b445de95a6af206ff}} 
+int \mbox{\hyperlink{class_saper_1_1_game_a4384a168c23e724b445de95a6af206ff}{game\+\_\+height}}
+\begin{DoxyCompactList}\small\item\em Ilość wierszy z polami. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a784f5ee2db8e065581bea6885af146a9}\label{class_saper_1_1_game_a784f5ee2db8e065581bea6885af146a9}} 
+int \mbox{\hyperlink{class_saper_1_1_game_a784f5ee2db8e065581bea6885af146a9}{game\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Wielkość gry (ilość kafelków) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a3acb80304c24bc43f5002d3ce578e7b9}\label{class_saper_1_1_game_a3acb80304c24bc43f5002d3ce578e7b9}} 
+int \mbox{\hyperlink{class_saper_1_1_game_a3acb80304c24bc43f5002d3ce578e7b9}{tiles\+\_\+left}}
+\begin{DoxyCompactList}\small\item\em Ile pól pozostało do kliknięcia. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a34bdb6551f2f859d65cd424b97c48d74}\label{class_saper_1_1_game_a34bdb6551f2f859d65cd424b97c48d74}} 
+bool \mbox{\hyperlink{class_saper_1_1_game_a34bdb6551f2f859d65cd424b97c48d74}{game\+\_\+over}}
+\begin{DoxyCompactList}\small\item\em Czy gra została zakończona. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_adc5efafe49ceab9315e68c8077db0800}\label{class_saper_1_1_game_adc5efafe49ceab9315e68c8077db0800}} 
+bool \mbox{\hyperlink{class_saper_1_1_game_adc5efafe49ceab9315e68c8077db0800}{created}} = false
+\begin{DoxyCompactList}\small\item\em Czy gra została utworzona. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_saper_1_1_game_a9cfb62bd4e52323d17b9a4f4b58f8a4f}\label{class_saper_1_1_game_a9cfb62bd4e52323d17b9a4f4b58f8a4f}} 
+bool \mbox{\hyperlink{class_saper_1_1_game_a9cfb62bd4e52323d17b9a4f4b58f8a4f}{game\+\_\+win}}
+\begin{DoxyCompactList}\small\item\em Czy gra została wygrana. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_saper_1_1_game_af10b28306097f647aea5dbc84196fcd1}\label{class_saper_1_1_game_af10b28306097f647aea5dbc84196fcd1}} 
+override void {\bfseries Dispose} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Klasa \mbox{\hyperlink{class_saper_1_1_game}{Game}} odpowiadająca za działanie gry, dziedzicząca z klasy Form. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_saper_1_1_game_a87c8f7562e380781913a182aab6e093d}\label{class_saper_1_1_game_a87c8f7562e380781913a182aab6e093d}} 
+\index{Saper.Game@{Saper.Game}!ClickField@{ClickField}}
+\index{ClickField@{ClickField}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{ClickField()}{ClickField()}}
+{\footnotesize\ttfamily void Saper.\+Game.\+Click\+Field (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Funkcja naciskająca dane pole 
+\begin{DoxyParams}{Parameters}
+{\em i,j} & Pozycje od lewej oraz góry \\
+\hline
+\end{DoxyParams}
+Jeżeli pole jest puste \mbox{\Hypertarget{class_saper_1_1_game_a6ad3e962eca53c2dbf6b499a469fa5f2}\label{class_saper_1_1_game_a6ad3e962eca53c2dbf6b499a469fa5f2}} 
+\index{Saper.Game@{Saper.Game}!getField@{getField}}
+\index{getField@{getField}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{getField()}{getField()}}
+{\footnotesize\ttfamily int Saper.\+Game.\+get\+Field (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Pobranie zawartości pola 
+\begin{DoxyParams}{Parameters}
+{\em i,j} & Pozycje od lewej oraz góry \\
+\hline
+\end{DoxyParams}
+Zwróć wartość pola \mbox{\Hypertarget{class_saper_1_1_game_a036a73f7d4b60dada7ec45c9a712eff4}\label{class_saper_1_1_game_a036a73f7d4b60dada7ec45c9a712eff4}} 
+\index{Saper.Game@{Saper.Game}!GetIndex@{GetIndex}}
+\index{GetIndex@{GetIndex}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{GetIndex()}{GetIndex()}}
+{\footnotesize\ttfamily int Saper.\+Game.\+Get\+Index (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Funkcja zwracająca index w tablicy 
+\begin{DoxyParams}{Parameters}
+{\em i,j} & Pozycje od lewej oraz góry \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_saper_1_1_game_aad59b3c8d1d9ca582a9b508aad99631a}\label{class_saper_1_1_game_aad59b3c8d1d9ca582a9b508aad99631a}} 
+\index{Saper.Game@{Saper.Game}!GetTile@{GetTile}}
+\index{GetTile@{GetTile}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{GetTile()}{GetTile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_saper_1_1_tile}{Tile}} Saper.\+Game.\+Get\+Tile (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+Funckja zwracająca dane pole 
+\begin{DoxyParams}{Parameters}
+{\em i,j} & Pozycje od lewej oraz góry \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_saper_1_1_game_a77b5cf2c44e21908cbbe17622ef1c2db}\label{class_saper_1_1_game_a77b5cf2c44e21908cbbe17622ef1c2db}} 
+\index{Saper.Game@{Saper.Game}!NewGame@{NewGame}}
+\index{NewGame@{NewGame}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{NewGame()}{NewGame()}}
+{\footnotesize\ttfamily void Saper.\+Game.\+New\+Game (\begin{DoxyParamCaption}\item[{int}]{width = {\ttfamily 14},  }\item[{int}]{height = {\ttfamily 14},  }\item[{int}]{chance\+\_\+bomb = {\ttfamily 10},  }\item[{int \mbox{[}$\,$\mbox{]}}]{bombs = {\ttfamily null} }\end{DoxyParamCaption})}
+
+Funkcja tworząca nową grę (standardowo o rozmiarze 10x10) 
+\begin{DoxyParams}{Parameters}
+{\em width,height} & Szerokość i wysokość planszy \\
+\hline
+{\em chance\+\_\+bomb} & Szansa na wystąpienie bomby (1/x) \\
+\hline
+{\em bombs} & Opcjonalna tablica z ustawionymi bombami \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_saper_1_1_game_aa62b5814c25458101aaf843271dcff83}\label{class_saper_1_1_game_aa62b5814c25458101aaf843271dcff83}} 
+\index{Saper.Game@{Saper.Game}!setField@{setField}}
+\index{setField@{setField}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{setField()}{setField()}}
+{\footnotesize\ttfamily void Saper.\+Game.\+set\+Field (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{int}]{state }\end{DoxyParamCaption})}
+
+Ustawienie statusu pola 
+\begin{DoxyParams}{Parameters}
+{\em i,j} & Pozycje od lewej oraz góry \\
+\hline
+{\em state} & Nowy status na polu (bomba/puste) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_saper_1_1_game_ad7088e52259cb63a068213bf2856eebb}\label{class_saper_1_1_game_ad7088e52259cb63a068213bf2856eebb}} 
+\index{Saper.Game@{Saper.Game}!TileClick@{TileClick}}
+\index{TileClick@{TileClick}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{TileClick()}{TileClick()}}
+{\footnotesize\ttfamily void Saper.\+Game.\+Tile\+Click (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_saper_1_1_tile}{Tile}}}]{tile,  }\item[{bool}]{user\+\_\+click }\end{DoxyParamCaption})}
+
+Funkcja pomocnicza po kliknięciu na pole 
+\begin{DoxyParams}{Parameters}
+{\em tile} & Obiekt pola klasy \mbox{\hyperlink{class_saper_1_1_tile}{Tile}} \\
+\hline
+{\em user\+\_\+click} & Czy funkcja została wywołana przez nacisnięcie przycisku czy inna funkcję \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_saper_1_1_game_a77640c9261a148c9e68f28b0b02b57c8}\label{class_saper_1_1_game_a77640c9261a148c9e68f28b0b02b57c8}} 
+\index{Saper.Game@{Saper.Game}!TilesAround@{TilesAround}}
+\index{TilesAround@{TilesAround}!Saper.Game@{Saper.Game}}
+\subsubsection{\texorpdfstring{TilesAround()}{TilesAround()}}
+{\footnotesize\ttfamily int Saper.\+Game.\+Tiles\+Around (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+Funkcja sprawdzająca ile pól wokół posiada bomby 
+\begin{DoxyParams}{Parameters}
+{\em x,y} & Pozycje od lewej oraz góry \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/misie/\+Documents/\+Git\+Hub/saper/\+Saper/Program.\+cs\end{DoxyCompactItemize}
